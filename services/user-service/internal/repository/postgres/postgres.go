@@ -1,14 +1,24 @@
 package postgres
 
 import (
-	"context"
+	"database/sql"
+	"fmt"
 
-	"github.com/google/uuid"
-	"github.com/pseudoerr0x213/ticket-booking-system/user-service/internal/domain"
+	"github.com/pseudoerr0x213/ticket-booking-system/user-service/internal/config"
 )
 
-type UserRepository interface {
-	Create(ctx context.Context, user *domain.User) error
-	GetById(ctx context.Context, id uuid.UUID) (*domain.User, error) 
-	Delete(ctx context.Context, id uuid.UUID) error
+func NewPostgresDB(cfg config.PostgresConfig) (*sql.DB, error) {
+	db, err := sql.Open("postgres", fmt.Sprintf("host=%s port=%s user=%s dbname=%s password=%s sslmode=%s",
+		cfg.Host, cfg.Port, cfg.Username, cfg.DBName, cfg.Password, cfg.SSLMode))
+	if err != nil {
+		return nil, err
+	}
+
+	err = db.Ping()
+
+	if err != nil {
+		return nil, err
+	}
+
+	return db, nil
 }
