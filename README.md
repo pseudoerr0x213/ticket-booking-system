@@ -15,18 +15,24 @@ Building this for fun and learning more about microservices
 
 - User (auth and user management) 
 - Booking (booking workflow)
-- Event (event crud operations)
+- Event (event crud operations) 
+
+
+### Maybe later 
+
 - Inventory 
-- Payment 
 - Notification 
+- Payment
 
 ## ToDo 
 
 - build and deploy user service 
 - handle auth and jwt tokens 
+- complete dto for booking api
 
 ## Done  
 
 - project layout  
 - following clean architecture pattern for microservices
-- makefile and schema db for user-service
+- makefile and schema db for user-service 
+- repository layer for booking-service

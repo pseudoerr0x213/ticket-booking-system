@@ -36,7 +36,7 @@ func NewServices(repo *repository.Repository) *Services {
 		User: NewUserService(repo),
 		Auth: NewAuthService(repo),
 	}
-}
+} 
 
 type CreateUserRequest struct {
 	Email     string `json:"email" validate:"required,email"`

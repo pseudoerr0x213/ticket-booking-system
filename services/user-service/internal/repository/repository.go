@@ -52,4 +52,5 @@ func NewRepository(db *sql.DB, redisClient *redis.Client) *Repository {
 		Auth:  postgres.NewAuthRepository(db),
 		Cache: cache.NewCacheRepository(redisClient),
 	}
-}
+} 
+

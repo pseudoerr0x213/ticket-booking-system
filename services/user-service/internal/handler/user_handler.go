@@ -62,7 +62,6 @@ func (h *Handler) UpdateCurrentUser(c *gin.Context) {
 
 	currentUser := user.(*domain.User)
 
-	// Convert to service request
 	serviceReq := service.UpdateUserRequest{
 		Email:     req.Email,
 		FirstName: req.FirstName,

@@ -3,8 +3,8 @@ port: "8080"
 db:
     username: "postgres" 
     host: "localhost"
-    port: "5432"
-    dbname: "ticket-userdb" 
+    port: "5433"
+    dbname: "ticket-bookingdb" 
     sslmode: "disable" 
 
 cache: 
