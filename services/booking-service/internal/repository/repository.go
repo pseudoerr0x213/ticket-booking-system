@@ -46,4 +46,6 @@ type TicketRepository interface {
 type Repository struct {
 	Booking BookingRepository
 	Ticket  TicketRepository
-}
+} 
+
+
